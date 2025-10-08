@@ -1,6 +1,7 @@
 .container {
-  max-width: 50rem;
+  max-width: 60rem;
   margin: 0 auto;
+  min-width: 40rem;
 }
 
 .movie__header {
@@ -22,6 +23,8 @@
 
 .movie__rating {
   margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
 .movie__watched {
@@ -90,4 +93,11 @@
 
 .list__item {
   margin-top: 1rem;
+}
+
+.star {
+  width: 1em;
+  height: 1em;
+  color: yellow;
+  margin-right: 0.25rem;
 }

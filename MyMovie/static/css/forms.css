@@ -24,7 +24,7 @@
 }
 
 .form__submit {
-    font-size 1.5rem;
+    font-size: 1.5rem;
     font-weight: 600;
     border: none;
     background-color: var(--background-color);
@@ -68,8 +68,6 @@
     margin-bottom: .2rem;
 }
 
-.form__container {
-}
 
 .form__group {
     display: flex;
@@ -99,4 +97,15 @@
 
 .form__flash--success{
  background: var(--accent-colour-2);
+}
+
+.form__small {
+    display: flex;
+    font-size: 0.83rem;
+    color: var(--text-muted);
+}
+
+.form__link {
+  text-decoration: none;
+  color: var(--accent-colour);
 }

@@ -1,20 +1,34 @@
-{% extends "base.html" %}
+{% from "macros/fields.html" import generate_field %}
 
-{% block styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
-{% endblock %}
+{% extends "base.html" %} 
+
+{%- block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" />
+{% endblock %} 
 
 {% block content %}
-<form class="form">
-    <h2 class="form__header">LOGIN</h2>
-    <label for="username" class="form__label">Username:</label>
-    <input type="text" id="username" class="form__text-input">
-    <label for="password" class="form__label">Password:</label>
-    <input type="password" id="password" class="form__text-input">
-    <div class="form__login-actions">
-        <button type="submit" class="form__submit">Login</button>
-        <a href="#" class="form__link u__default_links">Don't have an account?</a>
-    </div>
-</form>
+    <form name="login" method="post" novalidate class="form">
+        <h2 class="form__header">LOGIN</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {%- for category, message in messages %}
+                <span class="form__flash form__flash--{{category}}"> {{ message }}</span>
+            {% endfor %}
+        {% endwith %}
+        
+        <div class="form__container">
+            {{ form.hidden_tag() }}
+
+            {{ generate_field(form.email) }}
+            {{ generate_field(form.password) }}
+    
+            <span class="form__small">
+                Don't have an account? <a href="{{url_for('auth.Register')}}" class="form__link">Register here</a>.
+            </span>
+    
+            <div>
+                {{ form.submit(class_="form__submit") }}
+            </div>
+        </div>
+    </form>
+
 {% endblock %}

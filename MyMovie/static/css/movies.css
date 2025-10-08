@@ -72,3 +72,17 @@ button--add:hover {
     text-align: center;
     font-size: 1.2rem;
 }
+
+.form__flash {
+    margin: 1rem;
+    padding: .5rem 1rem;
+}
+
+.form__flash--success{
+ background: var(--accent-colour-2);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}

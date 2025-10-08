@@ -29,10 +29,10 @@
                 REGISTER
             </a>
             {% else %}
-            <a class="header__nav-element u__default_links" href="#">
+            <a class="header__nav-element u__default_links " href="{{url_for('movies.index')}}">
                 MOVIES
             </a>
-            <a class="header__nav-element header__nav-active u__default_links" href="#">
+            <a class="header__nav-element header__nav-active u__default_links" href="{{url_for('auth.Logout')}}">
                 LOG OUT
             </a>
             {% endif %}

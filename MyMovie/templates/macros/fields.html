@@ -10,3 +10,16 @@
         </ol>
     </div>
 {% endmacro %}
+
+{% macro generate_area_field(field) %}
+    <div class="form__group">
+        {{ field.label(class_="form__label") }}
+        {{ field(rows=4, class="form__field", style="resize: none;") }}
+
+        <ol>
+            {% for error in field.errors %}
+            <li class="form__error">{{error}}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endmacro %}
