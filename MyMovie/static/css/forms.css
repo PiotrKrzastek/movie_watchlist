@@ -1,0 +1,102 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    margin: 0 auto;
+    width: 60%;
+    max-width: 30rem;
+    border: var(--border);
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    background-color: var(--background-color);
+    box-shadow: .3rem .3rem 0px var(--accent-colour);
+}
+
+.form__header {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.form__submit:hover {
+    cursor: pointer;
+}
+
+.form__submit {
+    font-size 1.5rem;
+    font-weight: 600;
+    border: none;
+    background-color: var(--background-color);
+    padding: .7rem 2rem;
+}
+
+.form__submit:hover {
+    background-color: var(--background-color-hover);
+}
+
+.form__field {
+    padding: .2rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border: none;
+
+    border-bottom: 3px solid white;
+
+    font-size: inherit;
+    font-family: inherit;
+
+    padding: .75rem .5rem;
+    background: var(--background-color)
+}
+
+.form__field:focus {
+    border-bottom: var(--border)
+}
+
+.form__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form__link:hover {
+    text-decoration: underline;
+}
+
+.form__label {
+    margin-bottom: .2rem;
+}
+
+.form__container {
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form__error {
+    margin-top: .5rem;
+}
+
+.form__error,
+.form__flash{
+    display: block;
+    padding: .5rem;
+    color: var(--text);
+}
+
+.form__error,
+.form__flash--danger{
+ background: var(--accent-colour);
+}
+
+.form__flash {
+    margin: .5rem;
+}
+
+.form__flash--success{
+ background: var(--accent-colour-2);
+}

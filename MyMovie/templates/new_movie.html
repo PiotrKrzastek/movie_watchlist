@@ -1,0 +1,21 @@
+{% from "macros/fields.html" import generate_field %}
+{% extends "base.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css')}}">
+{% endblock %}
+
+{% block content %}
+    <form method="post" novalidate class="form">
+        <h2 class="form__header">NEW MOVIE</h2>
+        <div class="form__container">
+            {{ form.hidden_tag() }}
+            {{ generate_field(form.title)}}
+            {{ generate_field(form.director)}}
+            {{ generate_field(form.year)}}
+            <div class="form__actions">
+                {{form.submit(class_="button form__submit")}}
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% macro generate_field(field) %}
+    <div class="form__group">
+        {{ field.label(class_="form__label") }}
+        {{ field(class="form__field") }}
+
+        <ol>
+            {% for error in field.errors %}
+            <li class="form__error">{{error}}</li>
+            {% endfor %}
+        </ol>
+    </div>
+{% endmacro %}

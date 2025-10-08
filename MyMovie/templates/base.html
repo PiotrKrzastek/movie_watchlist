@@ -1,0 +1,58 @@
+{% from "macros/icons.html" import moon, screen, sun %}
+
+<!DOCTYPE html>
+<html lang="en" class="{{ 'dark-mode' if theme == 'dark' }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,600' rel='stylesheet'>
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+    <header class="header">
+
+        <a class="header__title u__default_links" href="{{url_for('movies.index')}}">
+            {{screen("header__title-logo")}}
+            <h1 class="header__title-text">MOVIES</h1>
+        </a>
+
+        <nav class="header__nav">
+            {% if not username %}
+            <a class="header__nav-element u__default_links {{ 'header__nav-active' if request.path == url_for('auth.Login') }}" href="{{url_for('auth.Login')}}">
+                LOGIN
+            </a>
+            <a class="header__nav-element u__default_links {{ 'header__nav-active' if request.path == url_for('auth.Register') }}" href="{{url_for('auth.Register')}}">
+                REGISTER
+            </a>
+            {% else %}
+            <a class="header__nav-element u__default_links" href="#">
+                MOVIES
+            </a>
+            <a class="header__nav-element header__nav-active u__default_links" href="#">
+                LOG OUT
+            </a>
+            {% endif %}
+            <a href="{{ url_for('util.toggle', current_page=request.path) }}" class="u__default_links">
+                {% if theme == "dark" %}
+                    {{sun("header__nav-toggle-view")}}
+                {% else %}
+                    {{moon("header__nav-toggle-view")}}
+                {% endif %}
+            </a>
+        </nav>
+    </header>
+
+    <main class="main">
+        {% block content%}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        Copyright © 2025 Piotr Krząstek. All rights reserved.
+    </footer>
+</body>
+</html>

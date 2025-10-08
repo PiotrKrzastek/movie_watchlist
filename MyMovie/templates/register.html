@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+{% endblock %}
+
+{% block content %}
+        <div class="login-card">
+            <h2 class="login-card__header">LOGIN</h2>
+            <form class="form">
+                <label for="username" class="form__label">Username:</label>
+                <input type="text" id="username" class="form__text-input">
+                <label for="password" class="form__label">Password:</label>
+                <input type="password" id="password" class="form__text-input">
+                <div class="form__login-actions">
+                    <button type="submit" class="form__submit">Login</button>
+                    <a href="#" class="form__link u__default_links">Don't have an account?</a>
+                </div>
+            </form>
+        </div>
+{% endblock %}

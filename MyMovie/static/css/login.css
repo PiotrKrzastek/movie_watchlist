@@ -1,0 +1,21 @@
+body {
+}
+
+.login-card {
+    border: var(--border);
+    color: var(--text-dark);
+    background-color: var(--background-color);
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 23rem;
+    width: 30rem;
+    box-shadow: 2px 2px 5px var(--text-dark);
+}
+
+.login-card__header {
+    font-weight: 200;
+    font-size: 3.5rem;
+}
