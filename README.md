@@ -10,7 +10,7 @@ This application was designed to test and consolidate my skills in backend devel
 * **Social Sharing:** Allows users to share their movie lists and ratings with friends via direct links.
 * **Dual-Theme Interface:** Features both dark and light modes, allowing for a customizable user experience.
 
-🛠 Tech Stack
+## 🛠 Tech Stack
 * **Backend:** Python / Flask
 * **Database:** MongoDB
 * **Security:** Passlib (Password hashing)
